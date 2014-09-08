@@ -1,0 +1,40 @@
+doctype html
+html(ng-app='angulator')
+  head
+    title Angulator
+    link(rel="stylesheet", href="index.css")
+  body(ng-controller='MainController')
+    h1 Angulator
+
+    #calculator
+      #display {{display}}
+      #display {{memory}}
+      #display {{operator}}
+      #controls
+        .row1
+          button(type='button' ng-click='addToDisplay(1)') 1
+          button(type='button' ng-click='addToDisplay(2)') 2 
+          button(type='button' ng-click='addToDisplay(3)') 3
+          button(type='button' ng-click='calculate("/")') /
+        .row2
+          button(type='button' ng-click='addToDisplay(4)') 4
+          button(type='button' ng-click='addToDisplay(5)') 5
+          button(type='button' ng-click='addToDisplay(6)') 6
+          button(type='button' ng-click='calculate("-")') -
+        .row3
+          button(type='button' ng-click='addToDisplay(7)') 7
+          button(type='button' ng-click='addToDisplay(8)') 8
+          button(type='button' ng-click='addToDisplay(9)') 9
+          button(type='button' ng-click='calculate("+")') +
+        .row4
+          button(type='button' ng-click='clearDisplay()') C
+          button(type='button' ng-click='addToDisplay(0)') 0
+          button(type='button' ng-click='addToDisplay(".")') .
+          button(type='button' ng-click='calculate("*")') *
+        .row4
+          button(type='button' ng-click='answer()') = 
+
+
+
+    script(src='/vendor/angular/angular.js')
+    script(src='/index.js')
